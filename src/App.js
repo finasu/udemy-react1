@@ -11,12 +11,13 @@ import logo from './logo.svg';
 // }
 
 class App extends Component {
-  render() {
-    return React.createElement(
-      "h1",
-      null,
-      "Hello, React2"
-    );
+  render(){
+    return(
+      <React.Fragment>
+        <label htmlFor="bar">bar</label>
+        <input type="text" onClick={() => {console.log("clickclick")}} />
+      </React.Fragment>
+    )
   }
 }
 
