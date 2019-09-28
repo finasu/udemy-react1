@@ -23,17 +23,28 @@ import logo from './logo.svg';
 // }
 
 const App = () => {
+  const profiles = [
+    {name: "Yuki", age: 31},
+    {name: "Saya", age:30},
+    {name: "Saki", }
+  ]
   return (
     <div>
-      <Cat />
-      <Cat />
-      <Cat />
+      {
+        profiles.map((profile, index) => {
+          return <User name={profile.name} age={profile.age} key={index} />
+        })
+      }
     </div>
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = (props) => {
+  return <div>Hi! {props.name} {props.age}</div>
+}
+
+User.defaultProps = {
+  age: 1
 }
 
 export default App;
