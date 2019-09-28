@@ -1,6 +1,7 @@
 // import React, { Component } from 'react';
 import React from 'react';
-import logo from './logo.svg';
+import PropTypes from 'prop-types';
+// import logo from './logo.svg';
 // import './App.css';
 
 // function App() {
@@ -25,8 +26,8 @@ import logo from './logo.svg';
 const App = () => {
   const profiles = [
     {name: "Yuki", age: 31},
-    {name: "Saya", age:30},
-    {name: "Saki", }
+    {name: "Saya", age: 30},
+    {name: "Saki", age: 2}
   ]
   return (
     <div>
@@ -44,7 +45,11 @@ const User = (props) => {
 }
 
 User.defaultProps = {
-  age: 1
+}
+
+User.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number.isRequired
 }
 
 export default App;
